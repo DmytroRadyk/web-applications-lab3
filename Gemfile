@@ -2,7 +2,7 @@ source "https://rubygems.org"
 ruby "~> 3.3.0"
 gem "rails", "~> 7.2.4"
 gem "sprockets-rails"
-gem "puma", "~> 7.0"
+gem "puma", "~> 8.0"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "devise", "~> 5.0"
