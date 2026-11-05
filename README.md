@@ -44,7 +44,7 @@ bundle exec rails assets:precompile
 2. Перевірте free-плани для бази й застосунку. За умовою лабораторної **не вводьте платіжні дані**.
 3. Blueprint передає `DATABASE_URL` і генерує `SECRET_KEY_BASE`. Секрети не зберігаються в Git; `config/master.key` і `.env` ігноруються.
 4. Build: `bash bin/render-build.sh`. Start: `bundle exec puma -C config/puma.rb`. Health check: `/up`.
-5. Після Live перевірте каталог, реєстрацію, вхід, додавання, редагування, видалення та захист чужих записів. Для seed-даних можна разово виконати `bundle exec rails db:seed` у середовищі хостингу або наповнити каталог через інтерфейс.
+5. Після Live перевірте каталог, реєстрацію, вхід, додавання, редагування, видалення та захист чужих записів. Build автоматично додає три демонстраційні замки; повторний seed не дублює записи.
 
 Для листів відновлення на реальному домені потрібно задати `MAILER_FROM`, `SMTP_ADDRESS`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`; хост береться з `RENDER_EXTERNAL_HOSTNAME` або `APP_HOST`. У development листи видно в `log/development.log`, у тестах використовується тестова доставка. Реальні SMTP-секрети в репозиторій не додавайте. Приклад назв змінних — `.env.example`.
 
