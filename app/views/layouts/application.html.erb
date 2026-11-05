@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="uk"><head>
+<title><%= content_for?(:title) ? yield(:title) : "Замки України" %> · Спадщина</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Відкривай замки України та зберігай історії про улюблені місця.">
+<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag "application" %><%= javascript_include_tag "application", defer: true %>
+</head><body>
+<header class="site-header"><nav class="container py-3 d-flex flex-wrap align-items-center justify-content-between gap-3" aria-label="Головне меню">
+<%= link_to root_path, class: "brand" do %><span class="brand-mark" aria-hidden="true">♜</span> СПАДЩИНА <small>ЗАМКИ УКРАЇНИ</small><% end %>
+<div class="d-flex flex-wrap align-items-center gap-3"><%= link_to "Колекція", castles_path, class: "nav-link" %>
+<% if user_signed_in? %><%= link_to "Додати замок", new_castle_path, class: "btn btn-primary" %><span class="account-email"><%= current_user.email %></span><%= button_to "Вийти", destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-sm" %>
+<% else %><%= link_to "Увійти", new_user_session_path, class: "nav-link" %><%= link_to "Створити акаунт", new_user_registration_path, class: "btn btn-primary" %><% end %></div>
+</nav></header>
+<main id="main"><div class="container pt-3"><% if notice.present? %><div role="status" class="alert alert-success"><%= notice %></div><% end %><% if alert.present? %><div role="alert" class="alert alert-danger"><%= alert %></div><% end %></div><%= yield %></main>
+<footer class="container py-4 mt-5 border-top d-flex flex-wrap justify-content-between gap-2"><span>Спадщина · Замки України</span><span>Місця, які варто зберегти.</span></footer>
+</body></html>

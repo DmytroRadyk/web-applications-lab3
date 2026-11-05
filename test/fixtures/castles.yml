@@ -1,0 +1,14 @@
+one:
+  name: Замок Паланок
+  region: Закарпатська
+  location: Мукачево
+  description: Фортеця на пагорбі.
+  search_text: замок паланок мукачево
+  user: one
+two:
+  name: Луцький замок
+  region: Волинська
+  location: Луцьк
+  description: Історичний замок у центрі міста.
+  search_text: луцький замок луцьк
+  user: two
